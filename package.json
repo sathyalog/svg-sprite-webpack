@@ -4,7 +4,7 @@
   "description": "SVG Sprite using webpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack -w"
   },
   "author": "Sathya",
   "license": "MIT",

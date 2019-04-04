@@ -1,3 +1,3 @@
-const $ = require('jquery');
+const $ = require("jquery");
 
-$('target').html('Hello Sathya');
+$("#target").html("Hello Sathya Vakacharla");
