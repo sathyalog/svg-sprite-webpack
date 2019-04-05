@@ -7,22 +7,6 @@ module.exports = {
     filename:"main.js",
     path:path.resolve(__dirname, "dist")
   },
-  // module: {
-  //   loaders: [{
-  //     test: /icons\/.*\.svg$/,
-  //     loader: 'svg-sprite-loader',
-  //     options: {
-  //       extract: true,
-  //       spriteFilename: './dist/img/icons.svg',
-  //       runtimeCompat: true
-  //     }
-  //   }]
-  // },
-  // plugins: [
-  //   new SpriteLoaderPlugin({
-  //     plainSprite: true
-  //   })
-  // ]
   module: {
     rules: [
       {
@@ -44,7 +28,11 @@ module.exports = {
       }
     ]
   },
-
+  devServer: {
+    headers: {
+      "Cache-Control": "private, max-age=600" // Read https://github.com/kisenka/svg-sprite-loader/issues/143
+    }
+  },
   plugins: [
     new SpriteLoaderPlugin({
         plainSprite: true
