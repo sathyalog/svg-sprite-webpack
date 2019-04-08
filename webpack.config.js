@@ -25,6 +25,18 @@ module.exports = {
       {
             test:/\.css$/,
             loader:'style-loader!css-loader'
+      },
+      {
+        enforce: "pre",//you can use enforce: "pre" section to check source files, not modified by other loaders (like babel-loader)
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options: {
+          // eslint options (if necessary)
+          //quiet: true, //Loader will process and report errors only and ignore warnings if this option is set to true
+          failOnError: true//Loader will cause the module build to fail if there are any eslint errors.
+
+        }
       }
     ]
   },

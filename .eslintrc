@@ -1,0 +1,42 @@
+{
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6
+    },
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true
+    },
+    "rules": {
+      "indent": ["error", 4],
+      "linebreak-style": ["error", "unix"],
+      "quotes": ["error", "single"],
+      "semi": ["error", "always"],
+      "comma-dangle": "warn",
+      'no-console': 'warn',
+      'no-debugger': 'error',
+      'no-dupe-args': 'error',
+      'no-dupe-keys': 'error',
+      'no-extra-parens': ['off', 'all', {
+        conditionalAssign: true,
+        nestedBinaryExpressions: false,
+        returnAssign: false,
+        ignoreJSX: 'all', // delegate to eslint-plugin-react
+        enforceForArrowConditionals: false,
+      }],
+      'no-extra-semi': 'error',
+      'arrow-parens': ['error', 'as-needed', {
+              requireForBlockBody: true,
+      }],
+      'constructor-super': 'error',
+      'no-const-assign': 'error',
+      'no-var': 'error',
+      'prefer-const': ['error', {
+            destructuring: 'any',
+            ignoreReadBeforeAssign: true,
+      }],
+      'no-undef': 'error',
+      'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
+    }
+}

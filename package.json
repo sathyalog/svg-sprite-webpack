@@ -4,12 +4,16 @@
   "description": "SVG Sprite using webpack",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -w"
+    "build": "webpack -w",
+    "lint": "eslint src/** src/**/**; exit 0",
+    "lint-fix": "eslint src/** src/**/** --fix; exit 0"
   },
   "author": "Sathya",
   "license": "MIT",
   "devDependencies": {
     "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
     "style-loader": "^0.23.1",
     "svg-sprite-loader": "^4.1.3",
     "webpack": "^4.29.6",
