@@ -1,6 +1,7 @@
 const path = require("path");
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
 const webpack = require('webpack');
+const WebpackLighthousePlugin = require('webpack-lighthouse-plugin');
 module.exports = {
   entry:"./src/index.js",
   output:{
@@ -41,6 +42,9 @@ module.exports = {
     ]
   },
   devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000,
     headers: {
       "Cache-Control": "private, max-age=600" // Read https://github.com/kisenka/svg-sprite-loader/issues/143
     }
@@ -48,6 +52,11 @@ module.exports = {
   plugins: [
     new SpriteLoaderPlugin({
         plainSprite: true
-      })
+      }),
+    new WebpackLighthousePlugin({
+      url: 'http://localhost:8080/dist/',
+      perf: true,
+      flags: ['headless']
+    })
 ]
 }
